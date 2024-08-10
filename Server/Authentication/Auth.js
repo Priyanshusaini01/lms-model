@@ -16,7 +16,7 @@ const jwtAuthMiddleware = (req, res, next) => {
 
         // Attach user information to the request object
         req.currentData = decoded
-        console.log(decoded)
+        // console.log(decoded)
         next();
     }catch(err){
         console.error(err);
@@ -28,7 +28,9 @@ const jwtAuthMiddleware = (req, res, next) => {
 // Function to generate JWT token
 const generateToken = (userData) => {
     // Generate a new JWT token using user data
-    return jwt.sign(userData, "shshshs", {expiresIn: 2000});
+    return jwt.sign(userData, "shshshs"
+        , {expiresIn: 2000}
+    );
 }
 
 module.exports = {jwtAuthMiddleware, generateToken};

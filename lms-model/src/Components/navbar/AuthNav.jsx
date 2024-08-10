@@ -2,30 +2,27 @@ import { useState } from "react";
 import { FaUserPlus } from "react-icons/fa6";
 import { FaPowerOff } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import Cookies from "js-cookie";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-
-function Navbar() {
+function AuthNav() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navigate = useNavigate();
 
-  const user = useSelector((state) => state.currentUser.User); 
-  const courses =  localStorage.getItem('user_Course')
+  const user = useSelector((state) => state.currentUser.User);
+  const courses = localStorage.getItem("user_Course");
   // console.log(user.enrolledCourses ? true : false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleLogout = ()=>{
-    Cookies.remove('HashedCredentials');
+  const handleLogout = () => {
+    navigate("/login");
     localStorage.clear();
-    Cookies.remove()
-    navigate('/login');
-  }
+    Cookies.remove();
+  };
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
       <div className="container mx-auto flex justify-between items-center py-4 px-6">
@@ -48,46 +45,46 @@ function Navbar() {
           >
             Home
           </NavLink>
-          <NavLink to="/about"  className={({ isActive }) =>
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
               `block py-2 pr-4 pl-3 duration-200 ${
                 isActive ? "text-orange-700" : "text-gray-700"
               } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
-            }>
+            }
+          >
             About
           </NavLink>
-          <NavLink to="/courses"  className={({ isActive }) =>
+          <NavLink
+            to="/courses"
+            className={({ isActive }) =>
               `block py-2 pr-4 pl-3 duration-200 ${
                 isActive ? "text-orange-700" : "text-gray-700"
               } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
-            }>
+            }
+          >
             Courses
           </NavLink>
-          <NavLink to="/blogs"  className={({ isActive }) =>
+          <NavLink
+            to="/blogs"
+            className={({ isActive }) =>
               `block py-2 pr-4 pl-3 duration-200 ${
                 isActive ? "text-orange-700" : "text-gray-700"
               } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
-            }>
+            }
+          >
             Blogs
           </NavLink>
-          <NavLink to="/contact"  className={({ isActive }) =>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
               `block py-2 pr-4 pl-3 duration-200 ${
                 isActive ? "text-orange-700" : "text-gray-700"
               } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
-            }>
+            }
+          >
             Contact
           </NavLink>
-          {
-              courses != 0 ? <NavLink
-              to="/class/id"
-              className={({ isActive }) =>
-                `block py-2 pr-4 pl-3 duration-200 ${
-                  isActive ? "text-orange-700" : "text-gray-700"
-                } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
-              }
-            >
-              Classroom
-            </NavLink> :""
-            }
         </nav>
         <div className="md:hidden">
           <button onClick={toggleMenu} className="text-gray-800">
@@ -107,42 +104,38 @@ function Navbar() {
             </svg>
           </button>
         </div>
-        <div className="hidden md:flex items-center">
-          {user.name ? (
-            <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded" onClick={handleLogout}>
-              <div className="flex flex-row justify-center items-center gap-2">
-              <NavLink to='/login' ><span>Logout</span></NavLink> 
-                <FaPowerOff />
-              </div>
-            </button>
-          ) : (
-            // <FaUserPlus />
-            <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded">
-              <div className="flex flex-row justify-center items-center gap-2">
-                <NavLink to='/login'><span>Login</span></NavLink> 
-                <FaUserPlus />
-              </div>
-            </button>
-          )}
-        </div>
+        <button className="bg-orange-500 hover:bg-orange-600 hidden lg:block text-white font-bold py-2 px-4 rounded">
+          <div className="flex flex-row justify-center items-center gap-2">
+            <NavLink to="/signup">
+              <span>SignUp</span>
+            </NavLink>
+            <FaUserPlus />
+          </div>
+        </button>
         <div
           className={`${
             isOpen ? "block" : "hidden"
           } absolute right-0 mt-80 flex bg-white shadow-md rounded-md w-full z-30 lg:hidden md:hidden`}
         >
           <nav className="p-4">
-            <NavLink to="/"  className={({ isActive }) =>
-              `block py-2 pr-4 pl-3 duration-200 ${
-                isActive ? "text-orange-700" : "text-gray-700"
-              } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
-            }>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                `block py-2 pr-4 pl-3 duration-200 ${
+                  isActive ? "text-orange-700" : "text-gray-700"
+                } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+              }
+            >
               Home
             </NavLink>
-            <NavLink to="/about"  className={({ isActive }) =>
-              `block py-2 pr-4 pl-3 duration-200 ${
-                isActive ? "text-orange-700" : "text-gray-700"
-              } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
-            }>
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                `block py-2 pr-4 pl-3 duration-200 ${
+                  isActive ? "text-orange-700" : "text-gray-700"
+                } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+              }
+            >
               About
             </NavLink>
             <NavLink
@@ -155,11 +148,14 @@ function Navbar() {
             >
               Courses
             </NavLink>
-            <NavLink to="/blogs"  className={({ isActive }) =>
-              `block py-2 pr-4 pl-3 duration-200 ${
-                isActive ? "text-orange-700" : "text-gray-700"
-              } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
-            }>
+            <NavLink
+              to="/blogs"
+              className={({ isActive }) =>
+                `block py-2 pr-4 pl-3 duration-200 ${
+                  isActive ? "text-orange-700" : "text-gray-700"
+                } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+              }
+            >
               Blogs
             </NavLink>
             <NavLink
@@ -172,35 +168,14 @@ function Navbar() {
             >
               Contact
             </NavLink>
-            {
-              courses != 0 ?   <NavLink
-              to="/class/id"
-              className={({ isActive }) =>
-                `block py-2 pr-4 pl-3 duration-200 ${
-                  isActive ? "text-orange-700" : "text-gray-700"
-                } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
-              }
-            >
-              Classroom
-            </NavLink> :""
-            }
-           
-            {user.name ? (
-              <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded">
-                <div className="flex flex-row justify-center items-center gap-2">
-                  <span>Logout</span>
-                  <FaPowerOff />
-                </div>
-              </button>
-            ) : (
-              // <FaUserPlus />
-              <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded">
-                <div className="flex flex-row justify-center items-center gap-2">
-                <NavLink to='/login'><span>Login</span></NavLink> 
-                  <FaUserPlus />
-                </div>
-              </button>
-            )}
+            <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded">
+              <div className="flex flex-row justify-center items-center gap-2">
+                <NavLink to="/signup">
+                  <span>SignUp</span>
+                </NavLink>
+                <FaUserPlus />
+              </div>
+            </button>
           </nav>
         </div>
       </div>
@@ -208,4 +183,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default AuthNav;

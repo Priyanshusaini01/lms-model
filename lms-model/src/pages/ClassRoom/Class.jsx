@@ -5,18 +5,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getUser } from '../../redux/slices/currentUser';
 
 const Class = () => {
-  
-  // const dispatch = useDispatch(); //
-  const user = useSelector((state) => state.currentUser.User); //
-  // useEffect(() => {
-  //   dispatch(getUser()); //
-  // }, [dispatch]); //
 
+  const user = useSelector((state) => state.currentUser.User); //  
+  // const dispatch = useDispatch(); //
   return (
     <div>
-      The token from cookie: {user.name}
       {
-        console.log(user)
+        user.name ?  `The token from cookie: ${user.name}` : <h1>Please Login First</h1>
       }
     </div>
   )

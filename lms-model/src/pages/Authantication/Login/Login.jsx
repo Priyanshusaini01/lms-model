@@ -3,8 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function Login() {
-
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -18,7 +16,7 @@ function Login() {
         email,
         password,
     });
-    // localStorage.setItem("user", JSON.stringify({ email: email, password: password }));
+
 
       console.log("Success:", response.data);
 
@@ -26,6 +24,7 @@ function Login() {
       setPassword("");
 
       navigate("/");
+      window.location.reload(false)
     } catch (error) {
       console.error("There was an error!", error);
     }

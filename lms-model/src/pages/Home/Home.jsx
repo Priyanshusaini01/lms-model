@@ -2,10 +2,13 @@ import React from "react";
 import Student from "../../Components/Students/Student";
 import Facilities from "../../Components/Facilites/Facilites";
 import Courses from "../../Components/Home_Courses/Courses";
+import Navbar from "../../Components/navbar/Navbar";
 
 const Home = () => {
   return (
-    <div className="w-fit">
+    <>
+    <Navbar/>
+    <div className="">
       <div className="hero-section">
         <img
           src="https://images.unsplash.com/photo-1544717302-de2939b7ef71?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -36,6 +39,8 @@ const Home = () => {
         ></img>
       </div>
     </div>
+
+    </>
   );
 };
 

@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 // import Searchbar from "./Components/search/Searchbar";
 import "./App.css";
 import Navbar from "./Components/navbar/Navbar";
+import AuthNav from "./Components/navbar/AuthNav";
 import Home from "./pages/Home/Home";
 // import Courses from "./Components/courses/Courses";
 // import Sponser from "./Components/sponser/Sponser";
@@ -19,7 +20,7 @@ import About from "./pages/About/About";
 import SignUp from './pages/Authantication/SignUp/SignUp';
 import Class from "./pages/ClassRoom/Class";
 import { useDispatch, useSelector } from "react-redux";
-import { getUser } from "./redux/slices/currentUser";
+import  {getUser}  from "./redux/slices/currentUser";
 
 
 function App() {
@@ -33,7 +34,7 @@ function App() {
   const router = createBrowserRouter([
     {
       path:'/',
-      element: <><Navbar/><Home/></>
+      element: <><Home/></>
     },{
       path: '/contact',
       element: <><Navbar/><Contact/></>
@@ -53,12 +54,13 @@ function App() {
     },
     {
       path: '/login',
-      element: <><Navbar/><Login/></>
+      element: <><AuthNav/><Login/></>
     },{
       path: '/signup',
-      element: <><Navbar/><SignUp/></>
-    },{
-      path: `/class/:user${user._id}`,
+      element: <><SignUp/></>
+    },
+    {
+      path: `/class/:user`,
       element: <><Navbar/><Class/></>
     }
   ])

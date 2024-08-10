@@ -25,14 +25,20 @@ export const getUserSlice = createSlice({
     extraReducers: (builder) => {
       builder
         .addCase(getUser.pending, (state) => {
+          localStorage.clear()
           state.loading = true;
         })
         .addCase(getUser.fulfilled, (state, action) => {
           state.loading = false;
+          // console.log(action.payload.email)
+          localStorage.clear()
+          localStorage.setItem('user_Email', action.payload.email)
+          localStorage.setItem('user_Course', action.payload.enrolledCourses.length)
           state.User = action.payload;
         })
         .addCase(getUser.rejected, (state, action) => {
           state.loading = false;
+          localStorage.clear()
           state.error = action.error.message;
         });
     },
