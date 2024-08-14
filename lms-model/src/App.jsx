@@ -21,6 +21,8 @@ import SignUp from './pages/Authantication/SignUp/SignUp';
 import Class from "./pages/ClassRoom/Class";
 import { useDispatch, useSelector } from "react-redux";
 import  {getUser}  from "./redux/slices/currentUser";
+import { getAllCourses } from "./redux/slices/courses";
+import Profile from "./pages/Profile/Profile";
 
 
 function App() {
@@ -29,6 +31,13 @@ function App() {
   const user = useSelector((state) => state.currentUser.User); //
   useEffect(() => {
     dispatch(getUser()); //
+  }, [dispatch]); //
+
+
+    
+  const course = useSelector((state) => state.courses.courses); //
+  useEffect(() => {
+    dispatch(getAllCourses()); //
   }, [dispatch]); //
 
   const router = createBrowserRouter([
@@ -58,10 +67,12 @@ function App() {
     },{
       path: '/signup',
       element: <><SignUp/></>
-    },
-    {
+    },{
       path: `/class/:user`,
       element: <><Navbar/><Class/></>
+    },{
+      path: `/profile`,
+      element: <><Navbar/><Profile/></>
     }
   ])
 
