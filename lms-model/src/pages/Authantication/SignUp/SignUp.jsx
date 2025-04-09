@@ -37,10 +37,14 @@ function SignUp() {
   };
 
   return (
-    <div className="bg-no-repeat bg-cover" style={{backgroundImage: 'url("https://static.vecteezy.com/system/resources/thumbnails/009/877/754/small/pixel-art-shopping-street-with-bakery-and-ice-cream-shop-retro-style-urban-landscape-cityscape-background-for-8bit-game-vector.jpg")', backgroundSize: 'cover' , backgroundPosition: 'center'}}>
-      <form method="post" onSubmit={handleSubmit}>
+    <div className="">
+      <form
+        method="post"
+        onSubmit={handleSubmit}
+        className="relative z-50 mix-blend-plus-darker"
+      >
         <div className=" flex justify-center items-center h-screen">
-          <div className=" bg-gray-800 px-10 py-10 rounded-xl ">
+          <div className=" bg-gray-900 px-10 py-10 rounded-xl ">
             <div className="">
               <h1 className="text-center text-white text-xl mb-4 font-bold">
                 Signup
@@ -78,7 +82,7 @@ function SignUp() {
             </div>
             <div className=" flex justify-center mb-3">
               <button
-                className=" bg-red-500 w-full text-white font-bold  px-2 py-2 rounded-lg"
+                className=" bg-[#f23c2f] w-full text-white font-bold  px-2 py-2 rounded-lg"
                 type="submit"
               >
                 Signup
@@ -87,7 +91,7 @@ function SignUp() {
             <div>
               <h2 className="text-white">
                 Have an account{" "}
-                <Link className=" text-red-500 font-bold" to={"/login"}>
+                <Link className=" text-[#f23c2f] font-bold" to={"/login"}>
                   Login
                 </Link>
               </h2>
@@ -95,6 +99,17 @@ function SignUp() {
           </div>
         </div>
       </form>
+      <video
+        className=" absolute inset-0 w-full h-full object-cover opacity-65"
+        autoPlay
+        muted
+        loop
+      >
+        <source
+          src="https://media.istockphoto.com/id/1232801314/video/couple-working-in-laptop-and-desktop-connected-online-for-covid19.mp4?s=mp4-640x640-is&k=20&c=Cgo_Jrfg-H73PAZ8Pg7uQcFcaTImp6qBhBIaruenST8="
+          type="video/mp4"
+        />
+      </video>
     </div>
   );
 }

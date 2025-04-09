@@ -3,80 +3,48 @@ import { FaArrowRight } from "react-icons/fa";
 
 const Industry = () => {
   return (
-    <div className="industry_card flex justify-center items-center flex-col mb-4">
-      <div className="heading">
-        <h2 className="text-3xl font-bold mb-4 mt-4 underline text-[#002f4D]">
-          Industry
-        </h2>
-      </div>
-      <div className="cardsContainer gap-10 flex flex-row justify-evenly items-center flex-wrap">
-        <div className="bg-[url('https://media.istockphoto.com/id/465956764/vector/abstract-background.jpg?s=612x612&w=0&k=20&c=dfYenXINpm7GxduecSiG1sTWGLzeTo8GDymRjI2YNrk=')] shadow-lg hover:shadow-gray-500 rounded-lg  p-4 text-center hover:bg-[#e6aab4] transition duration-300 ease-in-out w-72 h-72">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/9217/9217572.png"
-            alt="React Native Mobile App Development"
-            className="w-20 h-18 mx-auto rounded-lg mb-2 mt-9 hover:animate-spin"
-          />
-          <h3 className="text-lg font-bold text-[#002f4c] mt-4 ">
-            Learn with Expert
-          </h3>
-          <div className="flex gap-2 justify-evenly py-8 ">
-            <button className="bg-[#002f4c] hover:bg-[#86198f] text-white font-bold py-1 px-2 rounded-full mt-4">
-              <div className="flex  items-center gap-1">
-                Enroll Now <FaArrowRight />
-              </div>
-            </button>
-            <br />
-            <button className="bg-[#002f4c] hover:bg-[#86198f] text-white font-bold py-1 px-2 rounded-full mt-4">
-              View Details
-            </button>
+    <>
+      <div className=" bg-[url('https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk2MC1uaW5nLTAxLWcteF8xLWt6ZWc4MndpLmpwZw.jpg')] bg-cover bg-no-repeat p-8 ">
+        <br></br>
+        <div className="flex flex-row justify-evenly mt-8  lg:mt-16 xl:mt-20 mb-14 flex-wrap gap-5">
+          {/* Course Card 1 */}
+          <div className=" bg-[url('https://i.pinimg.com/564x/af/a2/d1/afa2d1abd8d4a9df35b1d2308cc723db.jpg')] bg-cover bg-no-repeat flex w-64 lg:w-64 xl:w-80 flex-col justify-center items-center h-72 lg:h-72 xl:h-96 rounded-3xl hover:animate-hflip relative border border-white shadow-xl ">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/9792/9792988.png"
+              alt="React Native Mobile App Development"
+              className="w-20 h-20 lg:w-20 lg:h-20 xl:w-40 xl:h-36 mx-auto rounded-lg mt-3 md:mt-2 hover:animate-bounce"
+            />
+            <h3 className="text-lg lg:text-xl xl:text-2xl font-bold mt-8 text-[#2f546c]">
+              Learn with Experts
+            </h3>
           </div>
-        </div>
 
-        <div className="bg-[url('https://media.istockphoto.com/id/465956764/vector/abstract-background.jpg?s=612x612&w=0&k=20&c=dfYenXINpm7GxduecSiG1sTWGLzeTo8GDymRjI2YNrk=')] shadow-lg hover:shadow-gray-500 rounded-lg  p-4 text-center hover:bg-[#e6aab4] transition duration-300 ease-in-out w-72 h-72 ">
-          <img
-            src="https://cdn2.vectorstock.com/i/1000x1000/24/26/boy-laptop-icon-cartoon-computer-child-vector-43002426.jpg"
-            alt="React Native Mobile App Development"
-            className="w-20 h-18 mx-auto rounded-lg mb-2 mt-9 hover:animate-spin" style={{mixBlendMode:"darken"}}
-          />
-          <h3 className="text-lg font-bold text-[#002f4c] mt-4 ">
-            Flexible Timing
-          </h3>
-          <div className="flex gap-2 justify-evenly py-8 ">
-            <button className="bg-[#002f4c] hover:bg-[#86198f] text-white font-bold py-1 px-2 rounded-full mt-4">
-              <div className="flex  items-center gap-1">
-                Enroll Now <FaArrowRight />
-              </div>
-            </button>
-            <br />
-            <button className="bg-[#002f4c] hover:bg-[#86198f] text-white font-bold py-1 px-2 rounded-full mt-4">
-              View Details
-            </button>
+          {/* Course Card 2 */}
+          <div className=" bg-[url('https://i.pinimg.com/564x/af/a2/d1/afa2d1abd8d4a9df35b1d2308cc723db.jpg')] bg-cover bg-no-repeat flex w-64 lg:w-64 xl:w-80 flex-col justify-center items-center h-72 lg:h-72 xl:h-96 rounded-3xl hover:animate-hflip relative border border-white shadow-xl">
+            <img
+              src="https://www.pngarts.com/files/7/Distance-Learning-Online-PNG-Pic.png"
+              alt="React Native Mobile App Development"
+              className="w-20 h-20 lg:w-20 lg:h-20 xl:w-40 xl:h-36 mx-auto rounded-lg mt-3 md:mt-2 hover:animate-bounce"
+            />
+            <h3 className="text-lg lg:text-xl xl:text-2xl font-bold mt-8 text-[#2f546c]">
+              Flexible Learning
+            </h3>
           </div>
-        </div>
 
-        <div className="bg-[url('https://media.istockphoto.com/id/465956764/vector/abstract-background.jpg?s=612x612&w=0&k=20&c=dfYenXINpm7GxduecSiG1sTWGLzeTo8GDymRjI2YNrk=')] shadow-lg hover:shadow-gray-500 rounded-lg  p-4 text-center hover:bg-[#e6aab4] transition duration-300 ease-in-out w-72 h-72">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/7238/7238706.png"
-            alt="React Native Mobile App Development"
-            className="w-20 h-18 mx-auto rounded-lg mb-2 mt-9 hover:animate-spin"
-          />
-          <h3 className="text-lg font-bold text-[#002f4c] mt-4 ">
-            Industries Standard
-          </h3>
-          <div className="flex gap-2 justify-evenly py-8 ">
-            <button className="bg-[#002f4c] hover:bg-[#86198f] text-white font-bold py-1 px-2 rounded-full mt-4">
-              <div className="flex  items-center gap-1">
-                Enroll Now <FaArrowRight />
-              </div>
-            </button>
-            <br />
-            <button className="bg-[#002f4c] hover:bg-[#86198f] text-white font-bold py-1 px-2 rounded-full mt-4">
-              View Details
-            </button>
+          {/* Course Card 3 */}
+          <div className=" bg-[url('https://i.pinimg.com/564x/af/a2/d1/afa2d1abd8d4a9df35b1d2308cc723db.jpg')] bg-cover bg-no-repeat flex w-64 lg:w-64 xl:w-80 flex-col justify-center items-center h-72 lg:h-72 xl:h-96 rounded-3xl hover:animate-hflip relative border border-white shadow-xl">
+            <img
+              src="https://cdn-icons-png.flaticon.com/256/7238/7238706.png"
+              alt="React Native Mobile App Development"
+              className="w-20 h-20 lg:w-20 lg:h-20 xl:w-40 xl:h-36 mx-auto rounded-lg mt-3 md:mt-2 hover:animate-bounce"
+            />
+            <h3 className="text-lg lg:text-xl xl:text-2xl font-bold mt-8 text-[#2f546c]">
+              Industrial Standards
+            </h3>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

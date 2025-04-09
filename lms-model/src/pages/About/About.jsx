@@ -2,31 +2,28 @@ import React from "react";
 import Gain from "../../Components/About_Gain/Gain";
 import Choose from "../../Components/About_Choose/Choose";
 import Industry from "../../Components/About_industry/Industry";
+import AboutHm from "../../Components/abouthm/AboutHm";
 
 const About = () => {
   return (
-    <div className="">
+    <div className="inset-x-0 top-0">
       <div className="banner">
-        <img
-          src="https://previews.123rf.com/images/antoniodiaz/antoniodiaz1506/antoniodiaz150600015/41597583-portrait-of-a-group-of-people-looking-at-a-laptop-computer-and-doing-some-work-in-an-office.jpg"
-          className="w-full"
-          style={{ height: "85vh" }}
-        ></img>
+       <AboutHm/>
         <br></br>
-        <h2 className="text-6xl font-bold mb-4 text-center text-[#002f4d]">
+        <h2 className="text-5xl md:text-6xl font-bold mb-4 text-center text-[#002f4d]">
           <span className="text-[#f47004]">About</span> Us
         </h2>
         <br></br>
-        <hr className="border-[#002f4d] border-t-4"></hr>
+        <hr class="w-full h-2  bg-gray-100 border-0 my-2 md:my-5 md:min-w-min dark:bg-[#002f4c]"></hr>
         <br></br>
       </div>
 
       <div className="oddid">
-        <h2 className="text-6xl font-bold mb-4 text-center text-[#002f4d]">
+        <h2 className="text-5xl md:text-6xl font-bold mb-7 mt-4 text-center text-[#002f4d]">
           Welcome to ODD<span className="text-[#f47004]">I</span>Q
         </h2>
         <br></br>
-        <p className="pl-16 pr-16 text-2xl font-semibold text-justify">
+        <p className="pl-7 pr-7 xl:pl-24 xl:pr-24 lg:pl-24 lg:pr-24 text-base lg:text-xl xl:text-xl font-normal lg:mx-10 xl:mx-32 text-justify mb-12">
           OODIQ is a training institute specializing in IT training, dedicated
           to equipping students with the skills and knowledge needed to excel in
           the rapidly evolving tech industry. The institute boasts a team of
@@ -46,6 +43,8 @@ const About = () => {
       <Gain/>
 
       <Choose/>
+
+      <hr class="w-full h-2  bg-gray-100 border-0 mt-2 md:my-0 md:min-w-min dark:bg-[#002f4c]"></hr>
 
       <Industry/>
     </div>

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import Blog from "../BlogPage/BlogPage";
+import Blog from "../../Components/All_Blog/Blog";
+
 
 const SelectedCard = () => {
   const { id } = useParams(); // Extract the blog ID from the URL
@@ -83,7 +84,7 @@ const SelectedCard = () => {
             }
           `}
         </style>
-            <div className="blog-content w-full md:w-3/4 sm:w-full">
+            <div className="blog-content w-full md:w-[60vw] sm:w-full">
               <div className="title flex justify-start ">
                 <h1 className="text-4xl underline">{blog.title}</h1> <h3>{}</h3>
               </div>
@@ -91,7 +92,8 @@ const SelectedCard = () => {
                 <p>{blog.content}</p>
               </div>
             </div>
-            <div className="restBlog w-full md:w-1/4 h-screen md:sticky overflow-y-scroll md:top-0 md:overflow-y-scroll">
+            
+            <div className="restBlog w-full md:w-[20vw] h-screen md:sticky overflow-y-scroll md:top-0 md:overflow-y-scroll">
               <div className="blogContainer flex flex-col items-center justify-center gap-2">
                 <div className="rest m-2">
                   <h3>Rest Blogs</h3>

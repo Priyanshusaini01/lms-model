@@ -22,7 +22,25 @@ import Class from "./pages/ClassRoom/Class";
 import { useDispatch, useSelector } from "react-redux";
 import  {getUser}  from "./redux/slices/currentUser";
 import { getAllCourses } from "./redux/slices/courses";
-import Profile from "./pages/Profile/Profile";
+import Navclass from "./Components/navclass/Navclass";
+import Profile from "./Components/profile/Profile";
+import Video from "./pages/Video/Video";
+import CourseForm from './Components/courseform/CourseForm';
+import Photo from "./Components/profile/Photo";
+import AccountSecurity from "./Components/profile/AccountSecurity";
+import Subscription from "./Components/profile/Subscription";
+import Notifications from "./Components/profile/Notifications";
+import AccountClose from "./Components/profile/AccountClose";
+import Sidebar from "./profile/sidebar/Sidebar";
+import PublicProfile from "./Components/profile/PublicProfile";
+import PrivacySettings from "./Components/profile/PrivacySettings";
+import Dasboard from "./Admin/Dasboard";
+import Dash from "./Admin/Dash";
+import AdHome from "./Admin/AdHome";
+import AdSettings from "./Admin/AdSettings";
+import Vid from "./pages/Vid";
+import Husk from "./pages/Husk";
+
 
 
 function App() {
@@ -63,17 +81,71 @@ function App() {
     },
     {
       path: '/login',
-      element: <><AuthNav/><Login/></>
+      element: <><AuthNav text="SignUp" route='signup'/><Login/></>
     },{
       path: '/signup',
-      element: <><SignUp/></>
+      element: <><AuthNav text="Login" route='login'/><SignUp/></>
     },{
       path: `/class/:user`,
-      element: <><Navbar/><Class/></>
+      element: <><Navclass/><Class/></>
     },{
       path: `/profile`,
       element: <><Navbar/><Profile/></>
+    },{
+      path: '/video',
+      element: <><Navbar/><Video/></>
+    },{
+      path:"/uploadCourse",
+      element: <><Navbar/><CourseForm/></>
+    },
+    {
+      path: `/courses/:title`,
+      element: <><Navbar/><Video/></>
+    },
+    {
+      path:`/photo`,
+      element: <><Navbar/><Photo/></>
+    },{
+      path:`/account`,
+      element: <><Navbar/><AccountSecurity/></>
+    },{
+      path:`/subscription`,
+      element: <><Navbar/><Subscription/></>
+    },{
+      path:`/notifications`,
+      element: <><Navbar/><Notifications/></>
+    },{
+      path:`/closeaccount`,
+      element: <><Navbar/><AccountClose/></>
+    },{
+      path:`/sidebar`,
+      element: <><Navbar/><Sidebar/></>
+    },{
+      path:`/public`,
+      element: <><Navbar/><PublicProfile/></>
+    },{
+      path:'/privacy',
+      element: <><Navbar/><PrivacySettings/></>
+    },{
+      path:'/dashbod',
+      element: <><Navbar/><Dasboard/></>
+    },{
+      path:`/home`,
+      element: <><Navbar/><AdHome/></>
+    },{
+      path:`/setting`,
+      element: <><Navbar/><AdSettings /></>
+    },{
+      path:`/prof`,
+      element: <><Navclass/><Dash/></>
+    },{
+      path:`/vid`,
+      element: <><Navbar/><Vid/></>
+    },{
+      path:"/husk",
+      element: <><Navbar/><Husk/></>
     }
+
   ])
 
   return (

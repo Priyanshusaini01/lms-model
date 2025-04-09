@@ -88,6 +88,7 @@ const Profile = () => {
         <h2 className="text-2xl font-bold md:text-3xl lg:text-4xl xl:text-5xl mb-2">
           Settings
         </h2>
+        
         <form>
           <label className=" mb-2 flex flex-row justify-center items-center">
             Name:

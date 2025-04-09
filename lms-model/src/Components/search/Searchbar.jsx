@@ -113,6 +113,82 @@ const Searchbar = () => {
             </button>
           </div>
         </div>
+
+        <div className="flex  justify-items-center justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5  ">
+            <div className="bg-white shadow-md rounded-lg p-6  hover:shadow-2xl w-72 h-72">
+              {/* <div className="flex justify-center mb-4">
+          <IoLocationSharp size={70}/>
+          </div> */}
+              <img
+                src="https://pngimg.com/d/google_maps_pin_PNG57.png"
+                alt="React Native Mobile App Development"
+                className="w-20 h-20 mx-auto rounded-lg mb-2 mt-9 hover:animate-pulse ease-in-out"
+              />
+              <h2 className="text-xl font-bold mb-2 flex justify-center">
+                Gwalior
+              </h2>
+              <p className="text-[#002f4c] text-base font-normal flex justify-center text-center items-center">
+                13A Infront of Miss Hill School, Maharani Laxmi Bai Colony (MLB
+                Road) Padav, Gwalior Pin code- 474002
+              </p>
+            </div>
+
+            <div className="bg-white shadow-md rounded-lg p-6 hover:shadow-2xl w-72 h-72">
+              {/* <div className="flex justify-center mb-4">
+          <FaPhone size={60} />
+          </div> */}
+              <img
+                src="https://png.pngitem.com/pimgs/s/514-5144615_envelope-call-logo-black-png-transparent-png.png"
+                alt="React Native Mobile App Development"
+                className="w-20 h-18 mx-auto rounded-lg mb-2 mt-9 hover:animate-pulse ease-in-out"
+              />
+              <h2 className="text-xl font-bold mb-2 flex justify-center">
+                Phone
+              </h2>
+              <p className="text-[#002f4c] text-base font-normal flex justify-center text-center items-center">
+                +91 9926243845
+              </p>
+            </div>
+
+            <div className="bg-white shadow-md rounded-lg p-6 hover:shadow-2xl w-72 h-72">
+              {/* <div className="flex justify-center mb-4">
+          <IoMdMail size={60} />
+          </div> */}
+              <img
+                src="https://spng.pngfind.com/pngs/s/53-534803_mail-icon-eps-file-mail-icon-png-blue.png"
+                alt="React Native Mobile App Development"
+                className="w-20 h-20 mx-auto rounded-lg mb-2 mt-9 hover:animate-pulse ease-in-out mix-blend-multiply"
+              />
+              <h2 className="text-xl font-bold mb-2 flex justify-center">
+                Email
+              </h2>
+              <p className="text-[#002f4c] text-base font-normal flex justify-center text-center items-center">
+                info@oddiq.com
+              </p>
+            </div>
+
+            <div className="bg-white shadow-md rounded-lg p-6 hover:shadow-2xl w-72 h-72">
+              {/* <div className="flex justify-center mb-4 ">
+          <IoHome size={60}/>
+          </div> */}
+              <img
+                src="https://www.svgrepo.com/show/431715/home-3.svg"
+                alt="React Native Mobile App Development"
+                className="w-20 h-18 mx-auto rounded-lg mb-2 mt-9 hover:animate-pulse ease-in-out"
+              />
+              <h2 className="text-xl font-bold mb-2 flex justify-center">
+                Delhi
+              </h2>
+              <p className="text-[#002f4c] text-base font-normal flex justify-center text-center items-center">
+                547-1 Kapasada High Tension Line Old Delhi-Gurugram Road Near
+                Asha Collection, Pin code - 110037
+              </p>
+            </div>
+          </div>
+        </div>
+
+
       </div>
     </div>
   );

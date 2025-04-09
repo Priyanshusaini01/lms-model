@@ -128,7 +128,7 @@ function Navbar() {
         <div
           className={`${
             isOpen ? "block" : "hidden"
-          } absolute right-0 mt-80 flex bg-white shadow-md rounded-md w-full z-30 lg:hidden md:hidden`}
+          } absolute right-0 mt-96 flex bg-white shadow-md rounded-md w-full z-30 lg:hidden md:hidden`}
         >
           <nav className="p-4">
             <NavLink to="/"  className={({ isActive }) =>

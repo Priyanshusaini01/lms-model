@@ -142,14 +142,14 @@ const handleDelete = async (req, res) => {
 };
 
 const handleReadAllUsers = async (req, res) => {
-  // const users = await user.find().populate('enrolledCourses');
-  const users = await user.find();
+  const users = await user.find().populate('enrolledCourses');
+  // const users = await user.find();
   res.send(users);
 };
 
 const handleCurrentUser = async (req, res) => {
   const data = req.currentData
-  const Curr_user = await user.findById(data._id)
+  const Curr_user = await user.findById(data._id).populate('enrolledCourses');
 
   if (!Curr_user) {
     return res.status(404).json({ message: "User not found" });

@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-function AuthNav() {
+function AuthNav({text, route}) {
   const [isOpen, setIsOpen] = useState(false);
 
   const navigate = useNavigate();
@@ -106,8 +106,8 @@ function AuthNav() {
         </div>
         <button className="bg-orange-500 hover:bg-orange-600 hidden lg:block text-white font-bold py-2 px-4 rounded">
           <div className="flex flex-row justify-center items-center gap-2">
-            <NavLink to="/signup">
-              <span>SignUp</span>
+            <NavLink to={`/${route}`}>
+              <span>{text}</span>
             </NavLink>
             <FaUserPlus />
           </div>
@@ -170,8 +170,8 @@ function AuthNav() {
             </NavLink>
             <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded">
               <div className="flex flex-row justify-center items-center gap-2">
-                <NavLink to="/signup">
-                  <span>SignUp</span>
+                <NavLink to={`/${route}`}>
+                  <span>{text}</span>
                 </NavLink>
                 <FaUserPlus />
               </div>

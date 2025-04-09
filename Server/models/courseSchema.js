@@ -7,9 +7,9 @@ const courseSchema = new mongoose.Schema({
   tags: [String],
   image: String,
   difficulty: String,
+  price:  Number,
   date: { type: Date, default: Date.now },
-  isPublished: { type: Boolean, default: false },
-  price:  Number
+  isPublished: { type: Boolean, default: false }
 });
 
 module.exports = mongoose.model("Course", courseSchema);

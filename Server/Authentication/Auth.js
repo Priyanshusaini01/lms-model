@@ -29,7 +29,7 @@ const jwtAuthMiddleware = (req, res, next) => {
 const generateToken = (userData) => {
     // Generate a new JWT token using user data
     return jwt.sign(userData, "shshshs"
-        , {expiresIn: 2000}
+        // , {expiresIn: 20000}
     );
 }
 

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <title>Video Streaming</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .item {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+        }
+        .icon {
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 10px;
+        }
+        .folder-icon {
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/42/Folder_icon.svg'); /* Default folder icon */
+        }
+        .video-icon {
+            background-image: url('/video-icon.png'); /* Update this path if your video icon is in the public directory */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Video Streaming</h1>
+        <div id="content"></div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const contentDiv = document.getElementById("content");
+
+            function loadContent(subdir = '') {
+                fetch(`/videos/${subdir}`)
+                    .then(response => response.json())
+                    .then(items => {
+                        contentDiv.innerHTML = '';  // Clear current content
+                        items.forEach(item => {
+                            const itemDiv = document.createElement('div');
+                            itemDiv.className = 'item';
+                            
+                            const icon = document.createElement('div');
+                            icon.className = 'icon';
+                            
+                            if (item.isDirectory) {
+                                fetch(`/folder-icon/${subdir + item.name}`)
+                                    .then(response => {
+                                        if (response.status === 200) {
+                                            icon.style.backgroundImage = `url('/folder-icon/${subdir + item.name}')`;
+                                        } else {
+                                            icon.className += ' folder-icon';  // Default folder icon
+                                        }
+                                    });
+
+                                icon.onclick = () => loadContent(subdir + item.name + '/');
+                            } else {
+                                icon.className += ' video-icon';  // Video icon
+                                icon.onclick = () => {
+                                    window.location.href = `/video/${subdir}${item.name}`;
+                                };
+                            }
+
+                            const label = document.createElement('div');
+                            label.innerText = item.name;
+
+                            itemDiv.appendChild(icon);
+                            itemDiv.appendChild(label);
+                            contentDiv.appendChild(itemDiv);
+                        });
+                    });
+            }
+
+            // Get the folder from the URL path
+            const folder = window.location.pathname.substring(1);
+
+            // Load content based on the folder
+            loadContent(folder);
+        });
+    </script>
+</body>
+</html>

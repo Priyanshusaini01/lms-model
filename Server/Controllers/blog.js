@@ -76,4 +76,47 @@ const handleDeleteBlog = async (req, res) => {
     }
 }
 
-module.exports = {handleUploadBlog , handleReadAllBlogs , handleBlogItem , handleReadAllowedBlogs , handlePermission , handleDeleteBlog}
+const handleLiked = async (req, res) => {
+    const { _id, user_id } = req.body;
+  
+    try {
+      const blog = await Blog.findByIdAndUpdate(_id, { $inc: { likes: 1 } }, { new: true })
+        .then(blog => {
+          if (!blog) return res.status(404).json({ message: 'Blog not found' });
+  
+          blog.liked_user.push(user_id);
+          blog.save();
+  
+          res.status(200).json({ message: 'Blog liked' });
+        })
+        .catch((err) => {
+          res.status(400);
+          console.log("Error liking blog:", err);
+        });
+    } catch (err) {
+      res.status(500).json({ message: 'Server Error' });
+    }
+  };
+
+
+  const handle_dis_Liked = async (req, res) => {
+    const { _id, user_id } = req.body;
+
+    try {
+      const blog = await Blog.findByIdAndUpdate(_id, { $inc: { likes: -1 } })
+        .then(blog => {
+          if (!blog) return res.status(404).json({ message: 'Blog not found' });
+          blog.liked_user.pop(user_id);
+          blog.save();
+          res.status(200).json({ message: 'Blog disliked' });
+        })
+        .catch((err) => {
+          res.status(400);
+          console.log("Error disliking blog:", err);
+        });
+    } catch (err) {
+      res.status(500).json({ message: 'Server Error' });
+    }
+  }
+
+module.exports = {handleUploadBlog , handleReadAllBlogs , handleBlogItem , handleReadAllowedBlogs , handlePermission , handleDeleteBlog , handleLiked , handle_dis_Liked}

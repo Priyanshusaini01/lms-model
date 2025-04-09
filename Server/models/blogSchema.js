@@ -25,6 +25,10 @@ const blogSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
+    liked_user: {
+        type: [String],
+        default: []
+    },
     status:{
         type: Boolean,
         default: false

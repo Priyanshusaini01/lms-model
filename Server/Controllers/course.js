@@ -6,14 +6,17 @@ const Course = require('../models/courseSchema')
 
 //########### Create Route ###########
 const handleUploadCourse = async (req , res)=>{
-    const {title , description , author , tags , image , difficulty , date , isPublished , price} = req.body
+    const {title , description , author , tags, difficulty , date , isPublished , price} = req.body
+    const image = req.file
+
+    console.log(req.body)
 
     const newCourse = await Course.create({
         title,
         description,
         author,
         tags,
-        image,
+        image:image?.path,
         difficulty,
         date,
         isPublished,
